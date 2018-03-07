@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
-
+    //'default' => env('DB_CONNECTION', 'sqlsrv'),
+    'default' => 'sqlsrv',
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -39,20 +39,17 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
+        'mysql' => array(
+            'driver'	=> 'mysql',
+            'unix_socket'=> '/cloudsql/analog-campus-196720:europe-west2:autobase',
+            'host'		=> '35.197.249.77',
+            'database'	=> 'autobase',
+            'username'	=> 'root',
+            'password'	=> 'q1s2d3w41',
+            'charset'	=> 'utf8',
+            'collation'	=> 'utf8_unicode_ci',
+            'prefix'	=> '',
+        ),
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -69,11 +66,11 @@ return [
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', 'autobase.database.windows.net'),
             'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'autobase'),
+            'username' => env('DB_USERNAME', 'autobase'),
+            'password' => env('DB_PASSWORD', 'Tiszza77vsz77_'),
             'charset' => 'utf8',
             'prefix' => '',
         ],
