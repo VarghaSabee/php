@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 });
 
 Route::get('login/google', 'GoogleController@redirectToProvider')->name("google.login");
@@ -24,6 +24,9 @@ Route::get('login/twitter/callback', 'TwitterController@handleProviderCallback')
 Route::get('login/facebook', 'FacebookController@redirectToProvider')->name("facebook.login");
 Route::get('login/facebook/callback', 'FacebookController@handleProviderCallback');
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', 'HomeController@test');
