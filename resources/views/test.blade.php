@@ -8,19 +8,19 @@
     <meta name="description" content="">
     <meta name="author" content="Sabee">
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/icon.png') }}"/>
+    <link rel="shortcut icon" type="image/png" href="{{ secure_asset('images/icon.png') }}"/>
     <title>Autobase</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <!-- custom CSS -->
-    <link href="{{ asset('bootstrap-3.3.6/dist/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ secure_asset('bootstrap-3.3.6/dist/css/bootstrap.css')}}" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="{{ asset('css/autobase.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/parsley.css')}}" rel="stylesheet">
-    <!--   <link href="{{ asset('css/datepicker3.css')}}" rel="stylesheet"> -->
-    <link href="{{ asset('css/datepick.css')}}" rel="stylesheet">
+    <link href="{{ secure_asset('css/autobase.css')}}" rel="stylesheet">
+    <link href="{{ secure_asset('css/parsley.css')}}" rel="stylesheet">
+    <!--   <link href="{{ secure_asset('css/datepicker3.css')}}" rel="stylesheet"> -->
+    <link href="{{ secure_asset('css/datepick.css')}}" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <style>
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -28,9 +28,9 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{ asset('js/jquery-ui.js')}}" ></script>
+    <script src="{{ secure_asset('js/jquery-ui.js')}}" ></script>
 
-    <script src="{{ asset('js/jquery.raty.js')}}"></script>
+    <script src="{{ secure_asset('js/jquery.raty.js')}}"></script>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -42,7 +42,7 @@
 <div class="tb_header">
     <div class="container">
         <div class="col-md-6" style="padding:0;">
-            <div class="tb_logo"> <a href="https://szabee.herokuapp.com/"><img src="{{ asset('images/logo.png') }}"> </a> </div>
+            <div class="tb_logo"> <a href="https://szabee.herokuapp.com/"><img src="{{ secure_asset('images/logo.png') }}"> </a> </div>
         </div>
         <div class="col-md-4" style="padding:0;">
             <div class="tb_navbar">
@@ -64,7 +64,7 @@
             <!------logged end---------------->
         </div>
     </div>
-    <div class="shadow"><img src="{{ asset('images/shadow.png')}}"></div>
+    <div class="shadow"><img src="{{ secure_asset('images/shadow.png')}}"></div>
 </div>
 <!--HEADER-BAR-END-->
 <!-- Modal -->
@@ -82,7 +82,7 @@
 
                 <input  type="button" value="Login" style="position: relative;" onclick="Login()">
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif')}}"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ secure_asset('images/loader-small.gif')}}"></div>
                 <div class="login_res" style="text-align:center;"></div>
                 <br>
                 <div class="forgot"><a data-dismiss="modal" href="#myModalf"data-toggle="modal" data-target="#myModalf">Forgot Password?</a></div>
@@ -110,7 +110,7 @@
 
                 <input  type="button" value="Sign up" style="position: relative;" onclick="Signup()">
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif') }}"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ secure_asset('images/loader-small.gif') }}"></div>
                 <div class="signup_res" style="text-align:center;"></div>
                 <br>
                 <div class="account"><a data-dismiss="modal" href="#myModals"data-toggle="modal" data-target="#myModals">Already have an account?</a></div>
@@ -137,7 +137,7 @@
                 <input  type="button" value="RESET" style="position: relative;" onclick="Forgot()">
 
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif')}}"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ secure_asset('images/loader-small.gif')}}"></div>
                 <div class="forgot_res" style="text-align:center;"></div>
                 <br>
                 <div class="account"><a href="#">Already have an account?</a></div>
@@ -188,7 +188,7 @@
         </div>
         <div class="col-md-6">
             <div class="tb_bus">
-                <img src="{{  asset('images/bus.png') }}">
+                <img src="{{  secure_asset('images/bus.png') }}">
             </div>
         </div>
     </div>
@@ -202,17 +202,17 @@
                 <div class="wrapper">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="tb_operator">
-                            <img src="{{ asset('images/routte.png')}}"> &nbsp;<span class="tb_operator1">5350 <small class="smalls">ROUTES</small></span>
+                            <img src="{{ secure_asset('images/routte.png')}}"> &nbsp;<span class="tb_operator1">5350 <small class="smalls">ROUTES</small></span>
                         </div>
                     </div>
                     <div class="col-md-4  col-sm-12 col-xs-12">
                         <div class="tb_operator left">
-                            <img src="{{ asset('images/route.png')}}">  &nbsp;<span class="tb_operator2">220<small class="smalls"> BUS OPERATORS</small></span>
+                            <img src="{{ secure_asset('images/route.png')}}">  &nbsp;<span class="tb_operator2">220<small class="smalls"> BUS OPERATORS</small></span>
                         </div>
                     </div>
                     <div class="col-md-4  col-sm-12 col-xs-12">
                         <div class="tb_operator right">
-                            <img src="{{ asset('images/ticket.png')}}">  &nbsp;<span class="tb_operator3">36,000 + <small class="smalls">TICKETS SOLD</small></span>
+                            <img src="{{ secure_asset('images/ticket.png')}}">  &nbsp;<span class="tb_operator3">36,000 + <small class="smalls">TICKETS SOLD</small></span>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
 <!--operator-BAR end-->
 <!--offers-BAR-->
 <div class="tb_offers">
-    <div class="shadow"><img src="{{ asset('images/shadow.png')}}"></div>
+    <div class="shadow"><img src="{{ secure_asset('images/shadow.png')}}"></div>
     <div class="outer">
         <div class="container">
             <div class="tb_inner">
@@ -231,7 +231,7 @@
                     <div class="wrapper">
                         <div class="col-md-4">
                             <div class="tb_offers1">
-                                <img src="{{ asset('images/rupees.png')}}">
+                                <img src="{{ secure_asset('images/rupees.png')}}">
                                 <div class="tb_list_offer">
                                     <div class="ofer_list">UPTO RS.100 OFF</div>
                                     <div class="ofer_list_bold">TRAVEL SMART</div>
@@ -242,7 +242,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="tb_offers1_top">
-                                <img src="{{ asset('images/bed.png')}}">
+                                <img src="{{ secure_asset('images/bed.png')}}">
                                 <div class="tb_list_offer" style=" border-right: 1px solid #dddddd;">
                                     <div class="ofer_list">UPTO 70% OFF</div>
                                     <div class="ofer_list_bold">ON HOTELS ACROSS UKRAINE</div>
@@ -253,7 +253,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="tb_offers3">
-                                <img src="{{ asset('images/phone.png')}}">
+                                <img src="{{ secure_asset('images/phone.png')}}">
                                 <div class="tb_list_offer">
                                     <div class="ofer_list"> &nbsp;&nbsp;FLAT Rs.100 OFF</div>
                                     <div class="ofer_list_bold left"> &nbsp;&nbsp;Autobase APP OFFER</div>
@@ -362,9 +362,9 @@
             <div class="col-md-3">
                 <div class="tb_social">
                     <ul>
-                        <li>  <a href="#"><img src="{{ asset('images/facebook.png')}}"></a> </li>
-                        <li>  <a href="#"> <img src="{{ asset('images/twitter.png')}}"></a></li>
-                        <li>  <a href="#">  <img src="{{ asset('images/google.png')}}"></a></li>
+                        <li>  <a href="#"><img src="{{ secure_asset('images/facebook.png')}}"></a> </li>
+                        <li>  <a href="#"> <img src="{{ secure_asset('images/twitter.png')}}"></a></li>
+                        <li>  <a href="#">  <img src="{{ secure_asset('images/google.png')}}"></a></li>
                     </ul>
                 </div>
                 <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
@@ -378,16 +378,16 @@
 </script>
 <!--   custom JavaScript -->
 
-<script src="{{ asset('js/autobase.js')}}"></script>
-<script src="{{ asset('bootstrap-3.3.6/dist/js/bootstrap.js')}}"></script>
+<script src="{{ secure_asset('js/autobase.js')}}"></script>
+<script src="{{ secure_asset('bootstrap-3.3.6/dist/js/bootstrap.js')}}"></script>
 <script src="https://malsup.github.com/jquery.form.js"></script>
 
 
 
-<script src="{{ asset('js/custom.js')}}"></script>
+<script src="{{ secure_asset('js/custom.js')}}"></script>
 
 
-<script src="{{ asset('js/parsley.min.js')}}"></script>
+<script src="{{ secure_asset('js/parsley.min.js')}}"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
