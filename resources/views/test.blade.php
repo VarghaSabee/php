@@ -14,7 +14,7 @@
     <!-- custom CSS -->
     <link href="{{ asset('bootstrap-3.3.6/dist/css/bootstrap.css')}}" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="{{ asset('css/autobase.css')}}" rel="stylesheet">
@@ -86,7 +86,7 @@
             <!------logged end---------------->
         </div>
     </div>
-    <div class="shadow"><img src="http://techlabz.in/truebus/assets/images/shadow.png"></div>
+    <div class="shadow"><img src="{{ asset('images/shadow.png')}}"></div>
 </div>
 <!--HEADER-BAR-END-->
 <!-- Modal -->
@@ -104,7 +104,7 @@
 
                 <input  type="button" value="Login" style="position: relative;" onclick="Login()">
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="http://techlabz.in/truebus/assets/images/loader-small.gif"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif')}}"></div>
                 <div class="login_res" style="text-align:center;"></div>
                 <br>
                 <div class="forgot"><a data-dismiss="modal" href="#myModalf"data-toggle="modal" data-target="#myModalf">Forgot Password?</a></div>
@@ -132,7 +132,7 @@
 
                 <input  type="button" value="Sign up" style="position: relative;" onclick="Signup()">
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="http://techlabz.in/truebus/assets/images/loader-small.gif"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif') }}"></div>
                 <div class="signup_res" style="text-align:center;"></div>
                 <br>
                 <div class="account"><a data-dismiss="modal" href="#myModals"data-toggle="modal" data-target="#myModals">Already have an account?</a></div>
@@ -159,7 +159,7 @@
                 <input  type="button" value="RESET" style="position: relative;" onclick="Forgot()">
 
                 <br>
-                <div class="small_loader" style="text-align:center;display:none"><img src="http://techlabz.in/truebus/assets/images/loader-small.gif"></div>
+                <div class="small_loader" style="text-align:center;display:none"><img src="{{ asset('images/loader-small.gif')}}"></div>
                 <div class="forgot_res" style="text-align:center;"></div>
                 <br>
                 <div class="account"><a href="#">Already have an account?</a></div>
@@ -224,17 +224,17 @@
                 <div class="wrapper">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="tb_operator">
-                            <img src="http://techlabz.in/truebus/assets/images/routte.png"> &nbsp;<span class="tb_operator1">5350 <small class="smalls">ROUTES</small></span>
+                            <img src="{{ asset('images/routte.png')}}"> &nbsp;<span class="tb_operator1">5350 <small class="smalls">ROUTES</small></span>
                         </div>
                     </div>
                     <div class="col-md-4  col-sm-12 col-xs-12">
                         <div class="tb_operator left">
-                            <img src="http://techlabz.in/truebus/assets/images/route.png">  &nbsp;<span class="tb_operator2">220<small class="smalls"> BUS OPERATORS</small></span>
+                            <img src="{{ asset('images/route.png')}}">  &nbsp;<span class="tb_operator2">220<small class="smalls"> BUS OPERATORS</small></span>
                         </div>
                     </div>
                     <div class="col-md-4  col-sm-12 col-xs-12">
                         <div class="tb_operator right">
-                            <img src="http://techlabz.in/truebus/assets/images/ticket.png">  &nbsp;<span class="tb_operator3">36,000 + <small class="smalls">TICKETS SOLD</small></span>
+                            <img src="{{ asset('images/ticket.png')}}">  &nbsp;<span class="tb_operator3">36,000 + <small class="smalls">TICKETS SOLD</small></span>
                         </div>
                     </div>
                 </div>
@@ -245,7 +245,7 @@
 <!--operator-BAR end-->
 <!--offers-BAR-->
 <div class="tb_offers">
-    <div class="shadow"><img src="http://techlabz.in/truebus/assets/images/shadow.png"></div>
+    <div class="shadow"><img src="{{ asset('images/shadow.png')}}"></div>
     <div class="outer">
         <div class="container">
             <div class="tb_inner">
@@ -253,7 +253,7 @@
                     <div class="wrapper">
                         <div class="col-md-4">
                             <div class="tb_offers1">
-                                <img src="http://techlabz.in/truebus/assets/images/rupees.png">
+                                <img src="{{ asset('images/rupees.png')}}">
                                 <div class="tb_list_offer">
                                     <div class="ofer_list">UPTO RS.100 OFF</div>
                                     <div class="ofer_list_bold">TRAVEL SMART</div>
@@ -264,7 +264,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="tb_offers1_top">
-                                <img src="http://techlabz.in/truebus/assets/images/bed.png">
+                                <img src="{{ asset('images/bed.png')}}">
                                 <div class="tb_list_offer" style=" border-right: 1px solid #dddddd;">
                                     <div class="ofer_list">UPTO 70% OFF</div>
                                     <div class="ofer_list_bold">ON HOTELS ACROSS UKRAINE</div>
@@ -275,7 +275,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="tb_offers3">
-                                <img src="http://techlabz.in/truebus/assets/images/phone.png">
+                                <img src="{{ asset('images/phone.png')}}">
                                 <div class="tb_list_offer">
                                     <div class="ofer_list"> &nbsp;&nbsp;FLAT Rs.100 OFF</div>
                                     <div class="ofer_list_bold left"> &nbsp;&nbsp;Autobase APP OFFER</div>
@@ -384,9 +384,9 @@
             <div class="col-md-3">
                 <div class="tb_social">
                     <ul>
-                        <li>  <a href="#"><img src="http://techlabz.in/truebus/assets/images/facebook.png"></a> </li>
-                        <li>  <a href="#"> <img src="http://techlabz.in/truebus/assets/images/twitter.png"></a></li>
-                        <li>  <a href="#">  <img src="http://techlabz.in/truebus/assets/images/google.png"></a></li>
+                        <li>  <a href="#"><img src="{{ asset('images/facebook.png')}}"></a> </li>
+                        <li>  <a href="#"> <img src="{{ asset('images/twitter.png')}}"></a></li>
+                        <li>  <a href="#">  <img src="{{ asset('images/google.png')}}"></a></li>
                     </ul>
                 </div>
                 <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
@@ -395,17 +395,16 @@
     </div>
 </div>	<script>
 
-    base_url = "http://techlabz.in/truebus/";
+    base_url = "https://szabee.herokuapp.com/";
 
 </script>
 <!--   custom JavaScript -->
 
 <script src="{{ asset('js/autobase.js')}}"></script>
 <script src="{{ asset('bootstrap-3.3.6/dist/js/bootstrap.js')}}"></script>
-<script src="http://malsup.github.com/jquery.form.js"></script>
+<script src="https://malsup.github.com/jquery.form.js"></script>
 
 
-<script src="http://techlabz.in/truebus/assets/js/jquery-datepicker.js"></script>
 
 <script src="{{ asset('js/custom.js')}}"></script>
 
@@ -444,7 +443,7 @@
         /*$(".date_of_birth").datepicker({
            changeYear: 'true',
             changeMonth: 'true'
-          
+
         });*/
         /* $(".datepicker").datepicker({
            autoclose:'true',

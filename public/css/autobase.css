@@ -2178,7 +2178,7 @@ ul.tabs li.current {
     overflow-x: hidden;
 }
 .lite-red-check {
-    background-image: url(http://csscheckbox.com/checkboxes/lite-red-check.png);
+    background-image: url(https://csscheckbox.com/checkboxes/lite-red-check.png);
 }
 input[type=checkbox].css-checkbox {
     position: absolute;
