@@ -21,36 +21,22 @@
     <link href="{{ asset('css/parsley.css')}}" rel="stylesheet">
     <!--   <link href="{{ asset('css/datepicker3.css')}}" rel="stylesheet"> -->
     <link href="{{ asset('css/datepick.css')}}" rel="stylesheet">
-
     <!-- Bootstrap core CSS -->
-
     <style>
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
         }
     </style>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!--script src="http://techlabz.in/truebus/assets/js/jquery.js"></script-->
-
-
     <script src="{{ asset('js/jquery-ui.js')}}" ></script>
 
     <script src="{{ asset('js/jquery.raty.js')}}"></script>
 
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
-
-
-
 <body >
-
 
 <!--HEADER-BAR-->
 <div class="tb_header">
@@ -62,16 +48,8 @@
             <div class="tb_navbar">
                 <ul>
                     <li><a href="https://szabee.herokuapp.com/">Home &nbsp;<span style="color:#f0a2a3;"> |</span></a></li>
-
-                    <li>
-                        <!--                            <a href="">Print/SMS Ticket &nbsp;  <span style="color:#f0a2a3;"> |</span></a>
--->
-                        <a href="#myModals" data-toggle="modal" data-target="#myModals">Print/SMS Ticket</a>  <span style="color:#f0a2a3;">
-                    </li>
-                    <li>
-                        <a href="#myModals" data-toggle="modal" data-target="#myModals">Easy Cancel/Refund</a>  <span style="color:#f0a2a3;">
-
-                    </li>
+                    <li><a href="#myModals" data-toggle="modal" data-target="#myModals">Print/SMS Ticket</a>  <span style="color:#f0a2a3;"></span></li>
+                    <li><a href="#myModals" data-toggle="modal" data-target="#myModals">Easy Cancel/Refund</a>  <span style="color:#f0a2a3;"></span></li>
                 </ul>
             </div>
         </div>
