@@ -380,7 +380,7 @@
 
 <script src="{{ secure_asset('js/autobase.js')}}"></script>
 <script src="{{ secure_asset('bootstrap-3.3.6/dist/js/bootstrap.js')}}"></script>
-<script src="https://malsup.github.com/jquery.form.js"></script>
+<script src="https://malsup.github.io/jquery.form.js"></script>
 
 
 

@@ -30,3 +30,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', 'HomeController@test');
+
+Route::get('/opit', 'HomeController@opit');
+
+Route::post('/vote', 'HomeController@vote')->name('vote');

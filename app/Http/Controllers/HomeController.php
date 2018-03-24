@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Guest;
 
 class HomeController extends Controller
 {
@@ -28,5 +29,25 @@ class HomeController extends Controller
     public function test()
     {
         return view('test');
+    }
+    public function opit()
+    {
+        return view('opit');
+    }
+    public function vote(Request $req)
+    {
+        $g = new Guest();
+        $g->fname = $req->fname;
+        $g->lname = $req->lname;
+        $checked ='';
+        foreach ($req->language as $item => $v) {
+           $checked .= $v . ' ';
+        }
+        $g->languages = $checked;
+        $g->special = $req->special;
+        $g->save();
+
+
+        return view('result',['guest'=>Guest::all()]);
     }
 }
