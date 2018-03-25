@@ -24,30 +24,35 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('index');
+    }
+
+    public function home()
+    {
         return view('home');
     }
-    public function test()
-    {
-        return view('test');
-    }
+
+    /*
+       Lab for php
+         */
     public function opit()
     {
         return view('opit');
     }
+
     public function vote(Request $req)
     {
         $g = new Guest();
         $g->fname = $req->fname;
         $g->lname = $req->lname;
-        $checked ='';
+        $checked = '';
         foreach ($req->language as $item => $v) {
-           $checked .= $v . ' ';
+            $checked .= $v . ' ';
         }
         $g->languages = $checked;
         $g->special = $req->special;
         $g->save();
 
-
-        return view('result',['guest'=>Guest::all()]);
+        return view('result', ['guest' => Guest::all()]);
     }
 }

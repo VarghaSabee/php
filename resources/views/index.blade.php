@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app='Autobase'>
+<html  ng-app='Autobase' lang="{{ app()->getLocale() }}">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -46,7 +46,9 @@
         </div>
         <div class="col-md-4" style="padding:0;">
             <div class="tb_navbar">
+
                 <ul>
+                    @if (Auth::guest())
                     <li><a href="https://szabee.herokuapp.com/">Home &nbsp;<span style="color:#f0a2a3;"> |</span></a></li>
                     <li><a href="#myModals" data-toggle="modal" data-target="#myModals">Print/SMS Ticket</a>  <span style="color:#f0a2a3;"></span></li>
                     <li><a href="#myModals" data-toggle="modal" data-target="#myModals">Easy Cancel/Refund</a>  <span style="color:#f0a2a3;"></span></li>
@@ -59,6 +61,34 @@
                 <ul>
                     <li><a href="#myModals" data-toggle="modal" data-target="#myModals">Sign In</a>  <span style="color:#f0a2a3;">/</span></li>
                     <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li style="margin:0;padding: 0">
+                                    <a href="{{route('home')}}"><span class="glyphicon glyphicon-print"></span> Print/SMS Ticket</a>
+                                </li>
+                                <li style="margin:0; padding: 0">
+                                    <a href="{{route('home')}}"><span class="glyphicon glyphicon-tags"></span> Easy Cancel/Refund</a>
+                                </li>
+                                <li style="margin:0;padding: 0">
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <span class="glyphicon glyphicon-log-out"></span> Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+
+                            </ul>
+                        </li>
+                    @endif
                 </ul>
             </div>
             <!------logged end---------------->
@@ -72,20 +102,27 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <button type="button" class="close_lft" data-dismiss="modal">&times;</button>
-        <form id="login" data-parsley-validate="">
+        <form id="login" data-parsley-validate="" method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
             <div class="login-block">
                 <h1>Login</h1>
-                <input type="text" name="username" placeholder="Email" class ="username" id="username" required=""/>
-                <input type="password" class="password" name="password" placeholder="Password" id="pass" required=""/>
-                <input type="checkbox" id="checkbox3" class="css-checkbox" name="rememberme"/>
+                <input type="email" name="email" placeholder="Email" class ="username" id="username" value="{{ old('email') }}" required autofocus/>
+                <input type="password" class="password"  name="password"  placeholder="Password" id="pass" required=""/>
+                <input type="checkbox" id="checkbox3" class="css-checkbox" name="remember"/>
                 <label for="checkbox3"   class="css-label lite-red-check">Remember Me</label>
 
-                <input  type="button" value="Login" style="position: relative;" onclick="Login()">
-                <br>
+                <button type="submit">Login</button>
+                <div class="tb_social" style="margin-left:-50px; margin-top: 10px;">
+                    <ul>
+                        <li>  <a href="{{ route('social.login',['provider'=>'facebook']) }}"><img src="{{ secure_asset('images/facebook.png')}}"></a> </li>
+                        <li>  <a href="{{ route('social.login',['provider'=>'twitter']) }}"> <img src="{{ secure_asset('images/twitter.png')}}"></a></li>
+                        <li>  <a href="{{ route('social.login',['provider'=>'google']) }}">  <img src="{{ secure_asset('images/google.png')}}"></a></li>
+                    </ul>
+                </div>
                 <div class="small_loader" style="text-align:center;display:none"><img src="{{ secure_asset('images/loader-small.gif')}}"></div>
                 <div class="login_res" style="text-align:center;"></div>
                 <br>
-                <div class="forgot"><a data-dismiss="modal" href="#myModalf"data-toggle="modal" data-target="#myModalf">Forgot Password?</a></div>
+                <div class="forgot"><a data-dismiss="modal" href="{{ route('password.request') }}"data-toggle="modal" data-target="#myModalf">Forgot Password?</a></div>
                 <div class="sign_in"><a  data-dismiss="modal" href="#myModal" data-toggle="modal" data-target="#myModal">Sign Up</a></div>
             </div>
         </form>
@@ -95,20 +132,21 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <button type="button" class="close_lft" data-dismiss="modal">&times;</button>
-        <form id="signup" data-parsley-validate="">
+        <form id="signup" data-parsley-validate="" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
             <div class="login-block">
                 <h1>Sign Up</h1>
-                <input class="name" id="register_firstname" name="name"  placeholder="Name" data-parsley-required="true"  data-parsley-trigger="change"
-                       data-parsley-minlength="2" data-parsley-maxlength="20" data-parsley-pattern="^[a-zA-Z\  \/]+$" >
-                <input type="email" value=""class ="username" placeholder="Email" name="username"  required/>
-                <input class="mobile"  id="signup-username" type="text" name="mob" data-parsley-type="digits" data-parsley-required="true" data-parsley-trigger="change" required required minlength="3"
+                <input class="name" id="register_firstname" name="name" value="{{ old('name') }}"  placeholder="Name" data-parsley-required="true"  data-parsley-trigger="change"
+                       data-parsley-minlength="2" data-parsley-maxlength="20" data-parsley-pattern="^[a-zA-Z\  \/]+$" required>
+                <input type="email" name="email" value="{{ old('email') }}" class ="username" placeholder="Email"  required/>
+                <input class="mobile"  id="signup-username" type="text" name="telephone" data-parsley-type="digits" data-parsley-required="true" data-parsley-trigger="change" required required minlength="3"
                        data-parsley-minlength="3" data-parsley-maxlength="15" placeholder="Mobile">
-                <input type="password" value=""class="password" placeholder="Password" id="dfdfd" name="password" type="password" data-parsley-maxlength="15" data-parsley-minlength="6"required=""/>
-                <input type="password" data-parsley-maxlength="15" data-parsley-minlength="6" data-parsley-equalto="#dfdfd" data-parsley-equalto-message="Password confirmation must match the password." class ="password"  required="" placeholder="Repeat Password" id="password" /><br>
+                <input type="password" value=""class="password" placeholder="Password" name="password"  data-parsley-maxlength="15" data-parsley-minlength="6"required=""/>
+                <input type="password" name="password_confirmation"  data-parsley-maxlength="15" data-parsley-minlength="6" class ="password"  required="" placeholder="Repeat Password" id="password" /><br>
                 <span class="terms_tb">By signing up, you agree to our <a class="cond_tb" href="#">Terms and Conditions.</a></span> <br>
                 <br>
 
-                <input  type="button" value="Sign up" style="position: relative;" onclick="Signup()">
+                <button type="submit" >Sign up</button>
                 <br>
                 <div class="small_loader" style="text-align:center;display:none"><img src="{{ secure_asset('images/loader-small.gif') }}"></div>
                 <div class="signup_res" style="text-align:center;"></div>

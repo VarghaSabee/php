@@ -28,7 +28,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <span class="glyphicon glyphicon-hand-right"></span> Guess</h3>
+                            <span class="glyphicon glyphicon-hand-right"></span> Questionnaire</h3>
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">

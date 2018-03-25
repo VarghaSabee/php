@@ -11,25 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('login/google', 'GoogleController@redirectToProvider')->name("google.login");
-Route::get('login/google/callback', 'GoogleController@handleProviderCallback');
-
-Route::get('login/twitter', 'TwitterController@redirectToProvider')->name("twitter.login");
-Route::get('login/twitter/callback', 'TwitterController@handleProviderCallback');
-
-Route::get('login/facebook', 'FacebookController@redirectToProvider')->name("facebook.login");
-Route::get('login/facebook/callback', 'FacebookController@handleProviderCallback');
-
-
+Route::get('login/{provider}', 'SocialLogin@redirectToProvider')->name("social.login");
+Route::get('login/{provider}/callback', 'SocialLogin@handleProviderCallback');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/test', 'HomeController@test');
+Route::get('/home', 'HomeController@home')->name('home');
 
 Route::get('/opit', 'HomeController@opit');
 
